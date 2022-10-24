@@ -1,0 +1,36 @@
+$grid-columns: 12;
+$grid-row-columns: 6;
+$grid-gutter-width: 25px;
+$grid-breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px,
+);
+
+$container-max-widths: (
+  sm: 100%,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px,
+);
+
+$container-padding: (
+  sm: 20px,
+  md: 20px,
+);
+
+$colors: (
+  "primary-black": #353535,
+  "primary-red": #ff5d5c,
+  "primary-red-alt": #ffadad,
+  "primary-blue": #5a78ff,
+  "primary-blue--3": rgba(90, 120, 255, 0.3),
+  "primary-blue-alt": #a0beff,
+  "secondary-red": #fa5e8a,
+  "secondary-orange": #f99451,
+  "secondary-blue": #49a9dd,
+  "secondary-purple": #896be3,
+);

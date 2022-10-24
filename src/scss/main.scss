@@ -1,0 +1,311 @@
+@import "./variable";
+@import "./breakpoint";
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.1;
+  filter: blur(12px);
+  background-image: url("../assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner {
+  padding-bottom: 37.02%;
+  width: 100%;
+  background-image: url("../assets/images/bg-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include media-down(md) {
+    padding-bottom: 141.5%;
+    background-image: url("../assets/images/bg-mobile.jpg");
+  }
+}
+
+.lyrics-menu {
+  margin-top: 40px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 768px;
+
+  @include media-down(md) {
+    // display: none;
+  }
+
+  &__list-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__list-item {
+    position: relative;
+    width: 25%;
+
+    @include media-down(md) {
+      width: 50%;
+    }
+  }
+
+  &__name {
+    padding-bottom: 100%;
+    width: 100%;
+    color: #ffc033;
+    border: 1px solid #ffc033;
+    font-size: 28px;
+    line-height: 1.1;
+
+    > a:nth-child(3) {
+      position: absolute;
+      top: 8px;
+      left: 4px;
+      transform: rotate(-30deg);
+      font-size: 42px;
+      font-weight: bold;
+      text-decoration: underline;
+      transition: 0.3s;
+      filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3));
+
+      &:hover {
+        filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(2px -4px 5px rgba(255, 255, 255, 0.5));
+      }
+
+      @include media-down(md) {
+        filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(2px -4px 5px rgba(255, 255, 255, 0.5));
+      }
+    }
+
+    > a:nth-child(4) {
+      position: absolute;
+      top: 0;
+      right: 16px;
+      text-align: center;
+      transform: rotate(-30deg);
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+      transition: 0.3s;
+
+      filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3));
+
+      &:hover {
+        filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(2px -4px 5px rgba(255, 255, 255, 0.5));
+      }
+
+      @include media-down(md) {
+        filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(2px -4px 5px rgba(255, 255, 255, 0.5));
+      }
+    }
+
+    > span:nth-child(1) {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    > span:nth-child(2) {
+      position: absolute;
+      bottom: 0;
+    }
+
+    span.strong {
+      font-size: 56px;
+      transition: 0.4s;
+    }
+
+    &:hover {
+      span.strong:not(.no-scale) {
+        font-size: 72px;
+      }
+    }
+  }
+}
+
+.lyrics-group {
+  margin: 15px auto 0;
+  padding: 25px 20px 0;
+  max-width: 400px;
+  filter: drop-shadow(1px 1px 5px rgb(255 255 255 / 50%));
+
+  &__list-item {
+    h2 {
+      margin-bottom: 4px;
+      font-size: 48px;
+      color: #ffc033;
+
+      @include media-down(md) {
+        font-size: 36px;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      color: #ffffff;
+
+      @include media-down(md) {
+        font-size: 20px;
+      }
+    }
+
+    hr {
+      margin: 20px auto;
+      width: 95%;
+      border: none;
+      border-top: 1px dashed rgba(255, 255, 255, 0.25);
+    }
+  }
+}
+
+.float {
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+
+  &_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #ffffff;
+    background-color: #ffc033;
+    border-radius: 9999px;
+    font-size: 28px;
+    transition: 0.8s;
+
+    &:hover {
+      transform: rotate(-35deg);
+    }
+  }
+
+  &__group {
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+    padding: 28px 20px 12px;
+    width: 160px;
+    border-radius: 8px;
+    border: 1px solid #ffc033;
+    background-color: hsla(41, 71%, 33%, 0.35);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.8s;
+
+    &__close {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 24px;
+      height: 24px;
+      transform: rotate(45deg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 4px;
+        display: inline-block;
+        width: 18px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 9999px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 12px;
+        display: inline-block;
+        width: 2px;
+        height: 18px;
+        background-color: #ffffff;
+        border-radius: 9999px;
+      }
+    }
+
+    a {
+      display: block;
+      margin-bottom: 2px;
+      color: #ffc033;
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      transition: 0.5s;
+
+      &:hover {
+        filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+          drop-shadow(-2px -2px 5px rgba(255, 255, 255, 0.5));
+      }
+    }
+  }
+
+  &.active {
+    .float__group {
+      opacity: 1;
+      bottom: 0;
+      pointer-events: all;
+    }
+  }
+}
+
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 85px;
+  width: 44px;
+  height: 44px;
+  color: #ffffff;
+  background-color: #ffc033;
+  border-radius: 9999px;
+  font-size: 28px;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    background-image: url("../assets/images/arrow.png");
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 7px 8px;
+    transition: 0.4s;
+    filter: invert(1);
+  }
+
+  &:hover {
+    .to-top__bg {
+      background-position: 10px 8px;
+    }
+  }
+}
