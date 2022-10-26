@@ -42,6 +42,54 @@ body {
   }
 }
 
+.announce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  h2 {
+    width: 100%;
+    font-size: 42px;
+    color: #ffffff;
+
+    @include media-down(md) {
+      font-size: 24px;
+    }
+
+    &.expired {
+      text-decoration: line-through;
+      opacity: 0.75;
+
+      span {
+        text-decoration: line-through;
+      }
+    }
+
+    &.today {
+      color: #ffc033;
+      filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(-2px 3px 5px rgba(255, 255, 255, 0.3))
+        drop-shadow(2px -4px 5px rgba(255, 255, 255, 0.5));
+    }
+
+    span {
+      display: inline-block;
+      width: 110px;
+
+      @include media-down(md) {
+        width: 58px;
+      }
+    }
+  }
+}
+
 .lyrics-menu {
   margin-top: 40px;
   margin: 40px auto 0;
